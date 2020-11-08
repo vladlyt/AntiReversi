@@ -44,7 +44,7 @@ func StringColorToColor(color string) game.Color {
 func (runner *GameRunner) initPlayers(color game.Color, reader *bufio.Reader) Players {
 	players := make(Players)
 
-	players[color] = NewMonteCarloBot(time.Second, color)
+	players[color] = NewMonteCarloBot(time.Second * 4, color)
 	players[!color] = NewRealPlayer(reader)
 
 	return players
